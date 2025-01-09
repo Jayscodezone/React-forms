@@ -1,8 +1,8 @@
-
-
-// create SignUpForm Component 
-export default function Authenticate(){
-    return (
-            <h2>Authenticate!</h2>
-    )
+// create SignUpForm Component
+export default function Authenticate() {
+  return (
+    <div>
+      <h2>Authenticate!</h2>
+    </div>
+  );
 }

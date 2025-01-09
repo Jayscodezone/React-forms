@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Authenticate from "./Authenticate";
 
 export default function SignUpForm() {
   const [username, setUsername] = useState("");
@@ -21,28 +22,31 @@ export default function SignUpForm() {
   //console.log("Hello 👋");
   return (
     <>
-      <h2> Sign Up </h2>
-      {error && <p>{error}</p>}
+      <div>
+        <h2> Sign Up </h2>
+        {error && <p>{error}</p>}
 
-      <form onSubmit={handleSubmit}>
-        <label>
-          Username:
-          <input
-            type="text"
-            value={username}
-            onChange={(event) => setUsername(event.target.value)}
-          />
-        </label>
-        <label>
-          Password:{" "}
-          <input
-            type="password"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-          />
-        </label>
-        <button>Submit</button>
-      </form>
+        <form onSubmit={handleSubmit}>
+          <label>
+            Username:
+            <input
+              type="text"
+              value={username}
+              onChange={(event) => setUsername(event.target.value)}
+            />
+          </label>
+          <label>
+            Password:{" "}
+            <input
+              type="password"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+            />
+          </label>
+          <button>Submit</button>
+        </form>
+      </div>
+      <Authenticate/>
     </>
   );
 }
