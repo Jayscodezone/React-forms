@@ -1,14 +1,13 @@
-import { useState } from 'react'
-import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+import "./App.css";
+import Authenticate from "./Authenticate";
+import SignUpForm from ".components/SignupForm";
 
+export default function App() {
   return (
     <>
-    
+      <Authenticate />
+      <SignUpForm />
     </>
-  )
+  );
 }
-
-export default App
