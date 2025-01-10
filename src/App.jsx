@@ -8,8 +8,8 @@ export default function App() {
   return (
     <>
       <div>
-        <Authenticate />
-        <SignUpForm />
+        <Authenticate token={token} setToken={setToken} />
+        <SignUpForm token={token} setToken={setToken} />
       </div>
     </>
   );
