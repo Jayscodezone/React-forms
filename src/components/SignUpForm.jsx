@@ -1,36 +1,40 @@
-import { useState } from "react";
-import Authenticate from "./Authenticate";
+import  {useState}  from "react";
 
-export default function SignUpForm({setToken}) {
+export default function SignUpForm({ setToken }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
 
   async function handleSubmit(event) {
     event.preventDefault();
+    //console.log("Hello 👋");
 
     try {
-      const response = await fetch( "https://fsa-jwt-practice.herokuapp.com/signup",{
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username, password }),
-    });
+      const response = await fetch(
+        "https://fsa-jwt-practice.herokuapp.com/signup",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ username, password }),
+        }
+      );
 
-    if (!response.ok) {
-      throw new Error(`Error: ${response.statusText}`);
-    }
+      if (!response.ok) {
+        throw new Error(`Error: ${response.statusText}`);
+      }
 
       const result = await response.json();
       console.log(result);
+
       // Passing the token to setToken
       setToken(result.token);
     } catch (error) {
       setError(error.message);
     }
   }
-  //console.log("Hello 👋");
+
   return (
     <>
       <div>
@@ -57,7 +61,6 @@ export default function SignUpForm({setToken}) {
           <button>Submit</button>
         </form>
       </div>
-      <Authenticate/>
     </>
   );
 }
