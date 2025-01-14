@@ -9,7 +9,6 @@ export default function App() {
   return (
     <>
       <div>
-        
         <SignUpForm token={token} setToken={setToken} />
         <Authenticate token={token} setToken={setToken} />
       </div>

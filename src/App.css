@@ -40,3 +40,19 @@
 .read-the-docs {
   color: #888;
 }
+
+/*Additional Styling*/
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #cd239a;
+  margin: 0;
+  padding: 0;
+}
+
+#usernameDisplay {
+  font-size: 20px;
+  color: #333;
+  margin: 20px;
+  text-align: center;
+}
